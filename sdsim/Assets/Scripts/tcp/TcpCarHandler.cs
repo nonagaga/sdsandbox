@@ -26,6 +26,9 @@ namespace tk
         public Lidar lidar;
         public Odometry[] odom;
 
+        // Props
+        public GameObject cube;
+
         private tk.JsonTcpClient client;
         public Text ai_text;
 
@@ -62,6 +65,7 @@ namespace tk
             conf = carObj.GetComponent<CarConfig>();
             pm = GameObject.FindObjectOfType<PathManager>();
             carSpawner = GameObject.FindObjectOfType<CarSpawner>();
+            cube = GameObject.Find("Cube");
             Canvas canvas = GameObject.FindObjectOfType<Canvas>();
             GameObject go = CarSpawner.getChildGameObject(canvas.gameObject, "AISteering");
             if (go != null)
@@ -187,6 +191,15 @@ namespace tk
             json.AddField("pitch", eulerAngles.x);
             json.AddField("yaw", eulerAngles.y);
             json.AddField("roll", eulerAngles.z);
+
+            // add fields for cube pose
+            json.AddField("obj_x", cube.transform.position.x);
+            json.AddField("obj_y", cube.transform.position.y);
+            json.AddField("obj_z", cube.transform.position.z);
+
+            //ignoring rotation for now
+
+
 
             if (pm != null)
             {
