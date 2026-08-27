@@ -1,3 +1,6 @@
+# My fork of SdSandbox
+This is my fork of the SdSandbox DonkeyCar simulator, which I've modified to include pushable objects. This version is not designed to be compatible with earlier SdSandbox versions and will LIKELY BREAK if used as a drop in replacement.
+
 # SdSandbox
 
 Self Driving Car Sandbox
