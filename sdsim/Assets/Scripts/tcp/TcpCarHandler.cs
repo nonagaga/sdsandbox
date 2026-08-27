@@ -27,7 +27,8 @@ namespace tk
         public Odometry[] odom;
 
         // Props
-        public GameObject cube;
+        [SerializeField] private GameObject cube;
+        [SerializeField] private GameObject goal;
 
         private tk.JsonTcpClient client;
         public Text ai_text;
@@ -66,6 +67,7 @@ namespace tk
             pm = GameObject.FindObjectOfType<PathManager>();
             carSpawner = GameObject.FindObjectOfType<CarSpawner>();
             cube = GameObject.Find("Cube");
+            goal = GameObject.Find("Goal Pose");
             Canvas canvas = GameObject.FindObjectOfType<Canvas>();
             GameObject go = CarSpawner.getChildGameObject(canvas.gameObject, "AISteering");
             if (go != null)
@@ -196,9 +198,12 @@ namespace tk
             json.AddField("obj_x", cube.transform.position.x);
             json.AddField("obj_y", cube.transform.position.y);
             json.AddField("obj_z", cube.transform.position.z);
-
             //ignoring rotation for now
 
+            // add fields for goal pose
+            json.AddField("goal_x", goal.transform.position.x);
+            json.AddField("goal_y", goal.transform.position.y);
+            json.AddField("goal_z", goal.transform.position.z);
 
 
             if (pm != null)
