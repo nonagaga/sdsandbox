@@ -9,7 +9,7 @@ env = gym.make("donkey-box-push-v0")
 
 obs, info = env.reset()
 try:
-    for _ in range(2):
+    for _ in range(5):
         for _ in range(100):
             # drive straight with small speed
             action = np.array([0.0, 0.2])  

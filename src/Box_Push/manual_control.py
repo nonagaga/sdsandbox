@@ -6,8 +6,6 @@ import gym_donkeycar
 # keyboard library requires sudo to run. Use:
 # sudo /home/gabriel/dev/TEA_Lab/sdsandbox/.venv/bin/python /home/gabriel/dev/TEA_Lab/sdsandbox/src/Box_Push/manual_control.py
 
-# env = gym.make("donkey-warrenbox-track-v0")
-
 # poll to receive an action vector for the car.
 def read_inputs():
     throttle = dir_bool_to_int(keyboard.is_pressed("up"), keyboard.is_pressed("down"))

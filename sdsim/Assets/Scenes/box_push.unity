@@ -343,6 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   goal: {fileID: 659411239}
   obj: {fileID: 1298849719}
+  donkey_spawn: {fileID: 0}
 --- !u!1 &561260477 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1612042024290732, guid: 89b891dc9d0fe46ffba6fbc78477652f,
@@ -709,6 +710,7 @@ GameObject:
   - component: {fileID: 1298849722}
   - component: {fileID: 1298849721}
   - component: {fileID: 1298849720}
+  - component: {fileID: 1298849725}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -836,6 +838,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 259568698376535658}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1298849725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298849719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5d62e8e34919588893cbb223fb0462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectResetter
 --- !u!1 &1593406209 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8037181034751879481, guid: 07f0ed3f4d97ab546b616cad407a0b96,

@@ -14,6 +14,8 @@ namespace tk
     public class TcpCarHandler : MonoBehaviour
     {
 
+        public static event Action OnReset;
+
         public GameObject carObj;
         public ICar car;
         public CarSpawner carSpawner;
@@ -565,8 +567,12 @@ namespace tk
 
             if (state == State.SendTelemetry)
             {
+                // this is the section that handles resetting the environment
                 if (bResetCar)
                 {
+                    // fire an action so our separate box push script can hear it
+                    OnReset?.Invoke();
+
                     car.RestorePosRot();
 
                     if (carObj != null)
